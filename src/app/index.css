@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@font-face {
+    font-family: 'VTB Group UI';
+    src: url('@admiral-ds/fonts/VTBGroupUI-SemiBold.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 550;
+    font-style: normal;
+    font-feature-settings: 'tnum' on, 'lnum' on, 'cv03' on, 'cv04' on;
+}
+
+@font-face {
+    font-family: 'VTB Group UI';
+    src: url('@admiral-ds/fonts/VTBGroupUI-Medium.otf') format('opentype');
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+    font-feature-settings: 'tnum' on, 'lnum' on, 'cv03' on, 'cv04' on;
+}
+
+@font-face {
+    font-family: 'VTB Group UI';
+    src: url('@admiral-ds/fonts/VTBGroupUI-Regular.otf') format('opentype');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+    font-feature-settings: 'tnum' on, 'lnum' on, 'cv03' on, 'cv04' on;
+}
+
+.use-vtb-fonts {
+    font-family: "VTB Group UI", "sans-serif";
+}
+
+body{
+    background-color: #E8E9EB;
+    
+}
+
+
+
+@media screen and (min-width: 1280px) {
+    body{
+        margin: 0;
+    }
+}
+
