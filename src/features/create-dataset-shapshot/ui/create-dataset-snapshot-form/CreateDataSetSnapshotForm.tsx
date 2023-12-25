@@ -52,7 +52,7 @@ export const CreateDataSetSnapshotForm: FC<CreateDataSetSnapshotFormProps> = ({
   }, [isError]);
 
   return (
-    <form className="flex flex-col w-full gap-3 form-control pl-2">
+    <form className="flex flex-col w-full gap-5 form-control ml-3 mt-4 p-3">
       {isLoading ? <BlurLoader /> : null}
       <div>
         <InputField
@@ -65,7 +65,7 @@ export const CreateDataSetSnapshotForm: FC<CreateDataSetSnapshotFormProps> = ({
           }}
         />
       </div>
-      <Button onClick={handleSubmit}  dimension="m">
+      <Button onClick={handleSubmit} style={{borderRadius: "4px", width: "124px", height: "40px"}}>
         {t('create')}
       </Button>
     </form>

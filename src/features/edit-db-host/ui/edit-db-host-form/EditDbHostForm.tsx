@@ -116,6 +116,7 @@ export const EditDbHostForm: FC<EditDbHostFormProps> = ({
           }}
         />
       </div>
+      <div style={{width: "auto", height: "1px", flexShrink: 0, background: "var(--Neutral-Neutral-20, #D5D8DE)", marginTop: "12px", marginBottom: "12px"}}></div>
       <div>
         <InputField
           label={t('createdbhostform.sshport.label')}

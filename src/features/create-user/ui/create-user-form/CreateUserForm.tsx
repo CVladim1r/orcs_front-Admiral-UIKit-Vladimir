@@ -83,7 +83,7 @@ export const CreateUserForm: FC<CreateUserFormProps> = ({
 
 
   return (
-    <form className="flex flex-col w-full gap-5 form-control ml-3 mt-4 p-3" >
+    <form className="flex flex-col w-full gap-5 form-control ml-3 mt-4 p-3">
       {isLoading ? <BlurLoader /> : null}
       <div>
         <InputField

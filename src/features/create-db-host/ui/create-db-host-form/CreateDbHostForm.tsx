@@ -119,7 +119,7 @@ export const CreateDbHostForm: FC<CreateDbHostFormProps> = ({
   }, [isError]);
 
   return (
-    <form className="flex flex-col w-full gap-3 form-control  mt-4">
+    <form className="flex flex-col w-full gap-3 form-control mt-4">
       {isLoading ? <BlurLoader /> : null}
       <div>
         <InputField
@@ -147,6 +147,7 @@ export const CreateDbHostForm: FC<CreateDbHostFormProps> = ({
           }}
         />
       </div>
+      <div style={{width: "auto", height: "1px", flexShrink: 0, background: "var(--Neutral-Neutral-20, #D5D8DE)", marginTop: "12px", marginBottom: "12px"}}></div>
       <div>
         <InputField
           label={t('createdbhostform.sshport.label')}
@@ -200,11 +201,12 @@ export const CreateDbHostForm: FC<CreateDbHostFormProps> = ({
         <SearchSelectField
           label={t('createdbhostform.dbtype.label')}
           value={dbType}
+          placeholder={t('createdbhostform.dbtype.hint')}
           onChange={(event) => {
             setDbType(event.currentTarget.value);
             setDbTypeError('');
           }}>
-          <Option value={''}>{t('createdbhostform.dbtype.hint')}</Option>
+
           <Option value="postgresql">PostgreSQL</Option>
           <Option value="clickhouse">ClickHouse</Option>
         </SearchSelectField>
@@ -230,11 +232,12 @@ export const CreateDbHostForm: FC<CreateDbHostFormProps> = ({
           <SearchSelectField
             label={t('createdbhostform.hostuser.label')}
             value={hostUserId}
+            placeholder={t('createdbhostform.hostuser.hint')}
             onChange={(event) => {
               setHostUserId(event.currentTarget.value);
               setHostUserIdError('');
             }}>
-            <Option value={''}>{t('createdbhostform.hostuser.hint')}</Option>
+
             {hostUsersData.map((user) => (
               <Option key={user.id} value={user.id}> {user.login}
                 {user.description ? ` - ${user.description}` : null}</Option>
@@ -255,7 +258,7 @@ export const CreateDbHostForm: FC<CreateDbHostFormProps> = ({
           />
         </Label>
       </div>
-      <Button onClick={handleCreate}>
+      <Button onClick={handleCreate} style={{borderRadius: "4px", width: "124px", height: "40px"}}>
         {t('create')}
       </Button>
     </form >

@@ -86,7 +86,7 @@ export const CreateDataSetByBcpForm: FC<CreateDataSetByBcpFormProps> = ({
   }, [isError]);
 
   return (
-    <form className="flex flex-col w-full gap-3 form-control ml-2 mt-4">
+    <form className="flex flex-col w-full gap-5 form-control ml-3 mt-4 p-3">
       {isLoading ? <BlurLoader /> : null}
       <div>
         <InputField
@@ -108,11 +108,11 @@ export const CreateDataSetByBcpForm: FC<CreateDataSetByBcpFormProps> = ({
           <SearchSelectField
           label={t('createdatasetbybcpform.srchost.label')}
           value={srcHost}
+          placeholder={t('createdatasetbybcpform.srchost.hint')}
           onChange={(event) => {
             setSrcHost(event.currentTarget.value);
             setSrcHostError('');
           }}>
-          <Option value={''}>{t('createdatasetbybcpform.srchost.hint')}</Option>
           {data.map((dbHost) => (
               <Option key={dbHost.id} value={dbHost.id}>
                 {dbHost.host_name}
@@ -136,6 +136,7 @@ export const CreateDataSetByBcpForm: FC<CreateDataSetByBcpFormProps> = ({
           }}
         />
       </div>
+      <div style={{width: "auto", height: "1px", flexShrink: 0, background: "var(--Neutral-Neutral-20, #D5D8DE)", marginTop: "12px", marginBottom: "12px"}}></div>
       <div>
         <InputField
           label={t('createdatasetbybcpform.remotepath.label')}
@@ -162,7 +163,7 @@ export const CreateDataSetByBcpForm: FC<CreateDataSetByBcpFormProps> = ({
           }}
         />
       </div>
-      <Button onClick={handleCreate}>
+      <Button onClick={handleCreate} style={{borderRadius: "4px", width: "124px", height: "40px"}}>
         {t('create')}
       </Button>
     </form>

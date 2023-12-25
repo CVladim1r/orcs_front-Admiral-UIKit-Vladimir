@@ -68,7 +68,7 @@ export const EditHostUserForm: FC<EditHostUserFormProps> = ({
   }, [isError]);
 
   return (
-    <form className="flex flex-col w-full gap-3 form-control ml-2 mt-4">
+    <form className="flex flex-col w-full gap-5 form-control ml-3 mt-4 p-3">
       {isLoading ? <BlurLoader /> : null}
       <div>
         <InputField

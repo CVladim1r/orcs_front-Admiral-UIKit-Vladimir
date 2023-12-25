@@ -117,7 +117,7 @@ export const CreateVdbForm: FC<CreateVdbFormProps> = ({
   }, [isError]);
 
   return (
-    <form className="flex flex-col w-full gap-3 form-control ml-2 mt-4">
+    <form className="flex flex-col w-full gap-5 form-control ml-3 mt-4 p-3">
       {isLoading ? <BlurLoader /> : null}
       <div>
         <InputField
@@ -132,6 +132,7 @@ export const CreateVdbForm: FC<CreateVdbFormProps> = ({
           }}
         />
       </div>
+      <div style={{width: "auto", height: "1px", flexShrink: 0, background: "var(--Neutral-Neutral-20, #D5D8DE)", marginTop: "12px", marginBottom: "12px"}}></div>
       <div>
         {isDbHostsError || isDbHostsLoading ? (
           <>loading...</>
@@ -139,11 +140,11 @@ export const CreateVdbForm: FC<CreateVdbFormProps> = ({
           <SearchSelectField
             label={t('createvdbform.host.label')}
             value={hostId}
+            placeholder={t('createvdbform.host.hint')}
             onChange={(event) => {
               setHostId(event.currentTarget.value);
               setHostIdError('');
             }}>
-            <Option value={''}>{t('createvdbform.host.hint')}</Option>
             {dbHostsData.map((dbHost) => (
               <Option key={dbHost.id} value={dbHost.id}>
                 {dbHost.host_name}
@@ -175,11 +176,11 @@ export const CreateVdbForm: FC<CreateVdbFormProps> = ({
           <SearchSelectField
             label={t('createvdbform.dataset.label')}
             value={dsId}
+            placeholder={t('createvdbform.dataset.hint')}
             onChange={(event) => {
               setDsId(event.currentTarget.value);
               setDsIdError('');
             }}>
-            <Option value={''}>{t('createvdbform.dataset.hint')}</Option>
             {dataSetsData.map((dataSet) => (
               <Option key={dataSet.id} value={dataSet.id}>
                 {dataSet.dsname}
@@ -195,11 +196,11 @@ export const CreateVdbForm: FC<CreateVdbFormProps> = ({
           label={t('createvdbform.snapshot.label')}
           value={snapId}
           disabled={!dsId}
+          placeholder={t('createvdbform.snapshot.hint')}
           onChange={(event) => {
             setSnapId(event.currentTarget.value);
             setSnapIdError('');
           }}>
-          <Option value={''}>{t('createvdbform.snapshot.hint')}</Option>
           {isDsSnapshotsLoading ? (
             <>loading...</>
           ) : isDsSnapshotsError ? (
@@ -219,11 +220,12 @@ export const CreateVdbForm: FC<CreateVdbFormProps> = ({
         <SearchSelectField
           label={t('createvdbform.user.label')}
           value={selectedUser}
+          placeholder={t('createvdbform.user.hint')}
           onChange={(event) => {
             setSelectedUser(event.currentTarget.value);
             setUserError('');
           }}>
-          <Option value={''}>{t('createvdbform.user.hint')}</Option>
+
           {isUsersLoading ? (
             <>loading...</>
           ) : isUsersError ? (
@@ -239,7 +241,7 @@ export const CreateVdbForm: FC<CreateVdbFormProps> = ({
         </SearchSelectField>
         {userError && <span className="mt-1 text-sm text-red-400">{userError}</span>}
       </div>
-      <Button onClick={handleCreate}>
+      <Button onClick={handleCreate} style={{borderRadius: "4px", width: "124px", height: "40px"}}>
         {t('create')}
       </Button>
     </form>
