@@ -133,7 +133,7 @@ export const EditUserForm: FC<EditUserFormProps> = ({
         </SearchSelectField>
       </div>
       <Button onClick={handleEdit} style={{borderRadius: "4px", width: "124px", height: "40px"}}>
-        {t('edit')}
+        Сохранить
       </Button>
     </form>
   );

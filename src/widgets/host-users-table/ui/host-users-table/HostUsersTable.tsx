@@ -58,10 +58,10 @@ export const TableRow: FC<HostUserProps> = ({ hostUser }) => {
   return (
     <>
       <tr className="w-full flex items-start gap-6 px-8 py-2 border border-transparent border-b-[#d0d5dc] font-normal "  style={{paddingTop: "14px"}}>
-        <td className="w-[160px]">{hostUser.login}</td>
-        <td className="w-[200px]">{hostUser.sshkey ? hostUser.sshkey : "-"}</td>
+        <td className="w-[180px]">{hostUser.login}</td>
+        <td className="w-[180px]">{hostUser.sshkey ? hostUser.sshkey : "-"}</td>
         <td className="w-[250px]">{hostUser.description}</td>
-        <td className="w-[145px]">{hostUser.need_sudo.toString()}</td>
+        <td className="w-[185px]">{hostUser.need_sudo.toString()}</td>
         <td className="w-[400px]">
           <div className="flex gap-1">
             <EditHostUserActionButton hostUser={hostUser} />

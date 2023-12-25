@@ -2,10 +2,19 @@ import { useQueryClient } from '@tanstack/react-query';
 import type { FC } from 'react';
 import { useDeleteVdb } from '../..';
 import { Button } from '@vtb/ui-kit3';
-
+import red from '@/shared/assets/red-create.png';
 interface DeleteVdbActionButtonProps {
   vdbId: string;
 }
+
+const buttonStyle = {
+  opacity: 1,
+  fontWeight: 400,
+  lineHeight: '16px',
+  fontSize: '14px',
+  color: '#2b313b',
+  
+};
 
 export const DeleteVdbActionButton: FC<DeleteVdbActionButtonProps> = ({
   vdbId,
@@ -18,11 +27,12 @@ export const DeleteVdbActionButton: FC<DeleteVdbActionButtonProps> = ({
   return (
     <Button
       onClick={handleDelete}
-      appearance='danger'
-      style={{opacity: 0.7}}
-      dimension="m"
+      appearance='ghost'
+      style={buttonStyle}
+      dimension="s"
     >
-      Удалить
+      <img src={red}></img>
+      <p>Удалить</p>
     </Button>
   );
 };

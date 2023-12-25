@@ -96,11 +96,11 @@ export const TableRow: FC<VdbProps> = ({ vdb }) => {
         className="w-full flex items-start gap-6 px-8 py-2 border border-transparent border-b-[#d0d5dc] font-normal"
         onClick={() => handleRowClick(mergedData)}
         style={{paddingTop: "14px"}}>
-        <td className="w-[160px]">{mergedData.vdbname}</td>
-        <td className="w-[160px]">{mergedData.host_name ? mergedData.host_name : '-'}</td>
-        <td className="w-[200px]">{mergedData.dbport ? mergedData.dbport : '-'}</td>
-        <td className="w-[300px]">{mergedData.dsname}</td>
-        <td className="w-[300px]">
+        <td className="w-[170px]">{mergedData.vdbname}</td>
+        <td className="w-[200px]">{mergedData.host_name ? mergedData.host_name : '-'}</td>
+        <td className="w-[180px]">{mergedData.dbport ? mergedData.dbport : '-'}</td>
+        <td className="w-[260px]">{mergedData.dsname}</td>
+        <td className="w-[278px]">
           <div className="flex gap-2">
             <label
               tabIndex={0}
@@ -112,6 +112,7 @@ export const TableRow: FC<VdbProps> = ({ vdb }) => {
             {selectedRow && selectedRow.id === mergedData.id ? (
               <Dropdown
                 tabIndex={0}
+                style={{width: "158px", display: "flex", alignContent: "center", paddingRight: "26px"}}
                 className="w-max menu p-2 bg-base-100 rounded-md gap-1 shadow-lg"
                 items={itemActions}
                 onClick={(e) => e.stopPropagation()}

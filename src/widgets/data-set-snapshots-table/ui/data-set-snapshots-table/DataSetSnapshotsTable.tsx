@@ -1,11 +1,10 @@
 import { useDataSetSnapshots } from '@/entities/data-sets';
 import Loader from '@/shared/ui/loader';
-import { useState, type FC } from 'react';
+import { FC } from 'react';
 import { columnList } from './column-list';
 import { convertDate } from '@/utils/dateConvertor';
 import { Snapshot, Stype } from '@/entities/data-sets/api/snapshotsApi';
-import { ReactComponent as MoreVerticalOutline } from '@openvtb/admiral-icons/build/system/MoreVerticalOutline.svg';
-import { Dropdown } from '@/shared/ui/dropdown';
+
 import { CreateVdbButton } from '@/features/create-vdb';
 import { DeleteDataSetSnapshotButton } from '@/features/delete-dataset-snapshot';
 
@@ -53,14 +52,9 @@ const InfoContainer: FC<InfoContainerProps> = ({ snapshot, dataSetId }) => {
         return 'Виртуальная БД';
     }
   };
-  const itemActions = [
-    <CreateVdbButton snapshot={snapshot} dataSetId={dataSetId} />,
-    <DeleteDataSetSnapshotButton />,
-  ]
-  const [selectedRow, setSelectedRow] = useState<boolean>(false);
-  
+
   return (
-    <div className="flex  gap-6 max-h-[620px] overflow-y-auto border-[5px] dark:bg-[#1D232A] border-blue-300 dark:border-gray-700 font-vtb-table p-4">
+    <div className="flex  gap-6 max-h-[620px] overflow-y-auto border-[3px] dark:bg-[#1D232A] border-blue-300 dark:border-gray-700 font-vtb-table p-4">
       <div className="flex flex-col">
         <span className="flex gap-2">
           {columnList[0].title}: {snapshot.sname}
@@ -73,23 +67,10 @@ const InfoContainer: FC<InfoContainerProps> = ({ snapshot, dataSetId }) => {
         </span>
       </div>
       <div className="flex flex-col ">
-        {columnList[3].title}:
+        <div style={{marginLeft: "12px"}}>{columnList[3].title}:</div>
         <div className="flex ">
-          <label
-            tabIndex={0}
-            className="btn btn-square btn-sm m-1"
-            onClick={() => setSelectedRow(!selectedRow)}
-          >
-            <MoreVerticalOutline style={{ width: '25px' }} />
-          </label>
-          {selectedRow ? (
-            <Dropdown
-              tabIndex={0}
-              className="w-max menu p-2 bg-base-100 rounded-md gap-1 shadow-lg"
-              items={itemActions}
-            />
-
-          ) : null}
+          <CreateVdbButton snapshot={snapshot} dataSetId={dataSetId} />
+          <DeleteDataSetSnapshotButton />
         </div>
       </div>
     </div>

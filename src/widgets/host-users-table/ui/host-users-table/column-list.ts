@@ -4,12 +4,12 @@ export const columnList: Column[] = [
   {
     name: 'login',
     title: 'Login',
-    width: 160,
+    width: 180,
   },
   {
     name: 'sshkey_string',
     title: 'SSH',
-    width: 200,
+    width: 180,
   },
   {
     name: 'description',
@@ -19,7 +19,7 @@ export const columnList: Column[] = [
   {
     name: 'need_sudo_string',
     title: 'Need sudo',
-    width: 160,
+    width: 200,
   },
   {
     name: 'host_row_actions',

@@ -14,7 +14,7 @@ export const columnList: Column[] = [
   {
     name: 'db_type',
     title: 'Type',
-    width: 180,
+    width: 140,
   },
   {
     name: 'host_name',

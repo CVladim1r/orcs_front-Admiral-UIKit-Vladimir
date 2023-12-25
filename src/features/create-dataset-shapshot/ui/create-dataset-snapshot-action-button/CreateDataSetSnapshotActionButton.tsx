@@ -1,11 +1,19 @@
-
 import { useState, type FC } from 'react';
 import { CreateDataSetSnapshotForm } from '../..';
 import { Button, Modal } from '@vtb/ui-kit3';
+import blue from '@/shared/assets/blue.svg';
 
 interface CreateDataSetSnapshotActionButtonProps {
   dataset: string;
 }
+
+const buttonStyle = {
+  opacity: 1,
+  fontWeight: 400,
+  lineHeight: '16px',
+  fontSize: '14px',
+  color: '#2b313b',
+};
 
 export const CreateDataSetSnapshotActionButton: FC<
   CreateDataSetSnapshotActionButtonProps
@@ -19,12 +27,13 @@ export const CreateDataSetSnapshotActionButton: FC<
   return (
     <>
       <Button
-        appearance='secondary'
-        dimension="m"
+        appearance='ghost'
+        dimension="s"
         onClick={handleClick}
+        style={buttonStyle}
       >
-        Создать DataSet
-        Snapshot
+        <img src={blue} alt="button create DataSet Snapshot" />
+        Создать DS Snapshot
       </Button>
       {isOpen ?
         <Modal onClose={() => setIsOpen(false)}>

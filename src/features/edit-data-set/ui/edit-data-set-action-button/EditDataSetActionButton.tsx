@@ -3,10 +3,18 @@ import { type FC, useState, MouseEvent } from 'react';
 import { EditDataSetForm } from '../..';
 import { DataSet } from '@/entities/data-sets/api/dataSetsApi';
 import { Button, Modal } from '@vtb/ui-kit3';
-
+import green from '@/shared/assets/green-create.png'
 interface EditDataSetActionButtonProps {
   dataSet: DataSet;
 }
+
+const buttonStyle = {
+  opacity: 1,
+  fontWeight: 400,
+  lineHeight: '16px',
+  fontSize: '14px',
+  color: '#2b313b',
+};
 
 export const EditDataSetActionButton: FC<EditDataSetActionButtonProps> = ({
   dataSet,
@@ -20,9 +28,12 @@ export const EditDataSetActionButton: FC<EditDataSetActionButtonProps> = ({
 
   return (
     <>
-      <Button appearance="secondary"
-        dimension="m"
-        onClick={handleClick}>
+      <Button appearance="ghost"
+        dimension="s"
+        onClick={handleClick}
+        style={buttonStyle}
+        >
+        <img src={green} alt="" />
         Изменить
       </Button>
       {isOpen ? (

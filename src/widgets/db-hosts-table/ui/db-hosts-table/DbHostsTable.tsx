@@ -86,26 +86,13 @@ export const TableRow: FC<DBHostProps> = ({ dbHost }) => {
       <tr className="w-full flex items-start gap-6 px-8 py-2 border border-transparent border-b-[#d0d5dc] font-normal"  style={{paddingTop: "14px"}}>
         <td className="w-[160px]">{mergedData.db_os_user}</td>
         <td className="w-[160px]">{mergedData.db_path}</td>
-        <td className="w-[180px]">{mergedData.db_type}</td>
+        <td className="w-[140px]">{mergedData.db_type}</td>
         <td className="w-[160px]">{mergedData.host_name}</td>
-        <td className="w-[200px]">{`${mergedData.login} - ${mergedData.description}`}</td>
+        <td className="w-[185px]">{`${mergedData.login} - ${mergedData.description}`}</td>
         <td className="w-[300px]">
           <div className="flex gap-2">
-            <label
-              tabIndex={0}
-              className="btn btn-square btn-sm m-1"
-              onClick={(e) => handleContextMenuClick(e, mergedData)}
-            >
-              <MoreVerticalOutline style={{ width: '25px' }} />
-            </label>
-            {selectedRow && selectedRow.id === mergedData.id ? (
-              <Dropdown
-                tabIndex={0}
-                className="w-max menu p-2 bg-base-100 rounded-md gap-1 shadow-lg"
-                items={itemActions}
-                onClick={(e) => e.stopPropagation()}
-              />
-            ) : null}
+            <EditDbHostActionButton dbhost={mergedData} />
+            <DeleteDbHostActionButton hostId={mergedData.id} />
           </div>
         </td>
       </tr>

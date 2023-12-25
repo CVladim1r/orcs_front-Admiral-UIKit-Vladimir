@@ -7,8 +7,6 @@ import { convertDate } from '@/utils/dateConvertor';
 //RCh
 import { DeleteDataSetSnapshotButton } from '@/features/delete-dataset-snapshot';
 import { RevertToVdbSnapshotButton } from '@/features/revert-to-vdb-snapshot';
-import { ReactComponent as MoreVerticalOutline } from '@openvtb/admiral-icons/build/system/MoreVerticalOutline.svg';
-import { Dropdown } from '@/shared/ui/dropdown';
 
 interface VdbSnapshotsTableProps {
   vdbId: string;
@@ -51,14 +49,9 @@ const InfoContainer: FC<InfoContainerProps> = ({ snapshot, vdbId }) => {
     }
   };
   */
-  const itemActions = [
-    <RevertToVdbSnapshotButton vdbId={vdbId} snapshot={snapshot} />,
-    <DeleteDataSetSnapshotButton />,
-  ]
-  const [selectedRow, setSelectedRow] = useState<boolean>(false);
-  
+
   return (
-    <div className="flex gap-6 max-h-[620px] overflow-y-auto border-[5px] dark:bg-[#1D232A] border-blue-300 dark:border-gray-700 font-vtb-table p-4">
+    <div className="flex gap-6 max-h-[620px] overflow-y-auto border-[3px] border-blue-300 dark:border-gray-700 font-vtb-table p-4">
       <div className="flex flex-col">
         <span className="flex gap-2">
           {columnList[0].title}: {snapshot.sname}
@@ -70,21 +63,8 @@ const InfoContainer: FC<InfoContainerProps> = ({ snapshot, vdbId }) => {
       <div className="flex flex-col ">
       {columnList[3].title}:
         <div className="flex ">
-          <label
-            tabIndex={0}
-            className="btn btn-square btn-sm m-1"
-            onClick={() => setSelectedRow(!selectedRow)}
-          >
-            <MoreVerticalOutline style={{ width: '25px' }} />
-          </label>
-          {selectedRow ? (
-            <Dropdown
-              tabIndex={0}
-              className="w-max menu p-2 bg-base-100 rounded-md gap-1 shadow-lg"
-              items={itemActions}
-            />
-
-          ) : null}
+          <RevertToVdbSnapshotButton vdbId={vdbId} snapshot={snapshot} />
+          <DeleteDataSetSnapshotButton />
         </div>
       </div>
     </div>

@@ -179,12 +179,12 @@ export const CreateUserForm: FC<CreateUserFormProps> = ({
       <div>
         <SearchSelectField
           label={t('createuserform.type.label')}
+          placeholder={t('createuserform.type.hint')}
           value={userType}
           onChange={(event) => {
             setUserType(event.currentTarget.value);
             setUserTypeError('');
           }}>
-          <Option value={''}>{t('createuserform.type.hint')}</Option>
           <Option value="admin">{t('createuserform.type.variants.admin')}</Option>
           <Option value="user">{t('createuserform.type.variants.user')}</Option>
           <Option value="monitor">{t('createuserform.type.variants.monitor')}</Option>

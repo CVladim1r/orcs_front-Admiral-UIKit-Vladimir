@@ -103,10 +103,10 @@ export const TableRow: FC<DataSetProps> = ({ dataSet }) => {
         className={"w-full flex items-start gap-6 px-8 py-2 border border-transparent border-b-[#d0d5dc] font-normal"}
         onClick={() => handleRowClick(mergedData)}
       >
-        <td className="w-[200px]">{mergedData.dsname}</td>
-        <td className="w-[200px]">{mergedData.dsport ? mergedData.dsport : "-"}</td>
-        <td className="w-[200px]">{mergedData.host_name}</td>
-        <td className="w-[200px]">
+        <td className="w-[277px]">{mergedData.dsname}</td>
+        <td className="w-[277px]">{mergedData.dsport ? mergedData.dsport : "-"}</td>
+        <td className="w-[279px]">{mergedData.host_name}</td>
+        <td className="w-[279px]">
           <div className="flex gap-2" >
             <label
               tabIndex={0}

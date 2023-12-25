@@ -2,10 +2,18 @@ import { Vdb } from '@/entities/vdbs/api/vdbsApi';
 import { useState, type FC } from 'react';
 import { EditVdbForm } from '../..';
 import { Button, Modal } from '@vtb/ui-kit3';
-
+import blue from '@/shared/assets/blue.svg';
 interface EditVdbActionButtonProps {
   vdb: Vdb;
 }
+
+const buttonStyle = {
+  opacity: 1,
+  fontWeight: 400,
+  lineHeight: '16px',
+  fontSize: '14px',
+  color: '#2b313b',
+};
 
 export const EditVdbActionButton: FC<EditVdbActionButtonProps> = ({ vdb }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,10 +26,12 @@ export const EditVdbActionButton: FC<EditVdbActionButtonProps> = ({ vdb }) => {
     <>
       <Button
         onClick={handleClick}
-        appearance='primary'
-        dimension="m"
+        appearance='ghost'
+        dimension="s"
+        style={buttonStyle}
       >
-        Изменить
+        <img src={blue} alt="button" />
+        <p>Изменить</p>
       </Button>
       {isOpen ? (
         <Modal onClose={() => setIsOpen(false)}>

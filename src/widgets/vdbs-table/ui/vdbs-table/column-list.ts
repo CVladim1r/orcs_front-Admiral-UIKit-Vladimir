@@ -4,26 +4,26 @@ export const columnList: Column[] = [
   {
     name: 'vdbname',
     title: 'Name',
-    width: 160,
+    width: 170,
   },
   {
     name: 'vdbserver',
     title: 'Server',
-    width: 160,
+    width: 200,
   },
   {
     name: 'dbport',
     title: 'DB Port',
-    width: 200
+    width: 180
   },
   {
     name: 'dsname',
     title: 'Data Set',
-    width: 300,
+    width: 260,
   },
   {
     name: 'vdb_row_actions',
     title: 'VDB Actions',
-    width: 300,
+    width: 278,
   },
 ];

@@ -17,7 +17,7 @@ export const Header: FC<HeaderProps> = ({ currentUser }) => {
   };
   
   return (
-    <header className="flex h-12 shrink-0 p-5 items-center justify-between bg-[#FFF]">
+    <header className="flex h-12 shrink-0 p-5 items-center justify-between bg-[#FFF]" style={{boxShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.1)"}}>
       <h2 style={{fontFamily: "VTB Group UI", fontWeight: 400, fontSize: "16px"}}>Оракулус платформа динамических данных</h2>
       <div className="flex gap-2">
         <p style={{opacity: 1, fontFamily: "VTB Group UI", fontSize: "16px", fontWeight: 400}}>
